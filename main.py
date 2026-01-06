@@ -13,9 +13,8 @@ BOOKS = [
 
 @app.get("/books/")
 def read_all_books(category: str):
-    print(category)
     if category:
-        result = [b for b in BOOKS if b['category'].casefold() == category.casefold()]
+        result = [b for b in BOOKS if b["category"].casefold() == category.casefold()]
         return result
     return BOOKS
 
@@ -26,3 +25,16 @@ def read_one_book(book_id: int):
     if not book:
         raise HTTPException(status_code=404, detail="Book not found")
     return book
+
+
+@app.get("/books/author/{book_author}")
+def get_books_by_author(book_author: str, category: str):
+    books = [
+        b
+        for b in BOOKS
+        if b["author"].casefold() == book_author.casefold()
+        and b["category"].casefold() == category.casefold()
+    ]
+    if not books:
+        raise HTTPException(status_code=404, detail="No books found")
+    return books
