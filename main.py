@@ -11,8 +11,12 @@ BOOKS = [
 ]
 
 
-@app.get("/books")
-def read_all_books():
+@app.get("/books/")
+def read_all_books(category: str):
+    print(category)
+    if category:
+        result = [b for b in BOOKS if b['category'].casefold() == category.casefold()]
+        return result
     return BOOKS
 
 
