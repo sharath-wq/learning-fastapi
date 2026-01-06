@@ -1,0 +1,76 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# ===============================
+# Virtual Environments
+# ===============================
+venv/
+env/
+.venv/
+ENV/
+.python-version
+
+# ===============================
+# FastAPI / Uvicorn / Gunicorn
+# ===============================
+*.log
+logs/
+uvicorn.log
+gunicorn.log
+
+# ===============================
+# Environment Variables
+# ===============================
+.env
+.env.*
+!.env.example
+
+# ===============================
+# Database / Cache
+# ===============================
+*.sqlite3
+*.db
+redis.dump
+
+# ===============================
+# Testing
+# ===============================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.pyre/
+
+# ===============================
+# Build / Packaging
+# ===============================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ===============================
+# IDEs / Editors
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Docker
+# ===============================
+docker-compose.override.yml
